@@ -26,6 +26,7 @@ Because we are not always working from a blank slate, it's important for develop
 'cards' should accept one or more card id and draw all cards that match the requested id(s), eg: 
 
 `index.html?cards=s-3` should draw the 3 of spades
+
 `index.html?cards=s-3+c-9+h-A` should draw the 3 of spades, 9 of clubs, and Ace of hearts.
 
 #### suits
@@ -33,6 +34,7 @@ Because we are not always working from a blank slate, it's important for develop
 'suits' should accept one or more suit name, and draw all cards that match the requested suit(s) eg:
 
  `index.html?suits=spades` should draw all the spades.
+
  `index.html?suits=spades+hearts` should draw all the spades, and all the hearts.
  
 #### ranks
@@ -40,6 +42,7 @@ Because we are not always working from a blank slate, it's important for develop
 'ranks' should accept one or more rank value, and draw all cards that match the requested rank(s) eg:
 
  `index.html?ranks=3` should draw all the 3s
+
  `index.html?ranks=3+5+13` should draw all the 3s, 5s, and Kings
 
 #### limit
@@ -47,7 +50,9 @@ Because we are not always working from a blank slate, it's important for develop
 'limit' should limit the number of cards drawed eg:
 
  `index.html?suits=spades&limit=4` should draw any 4 spades.
+
  `index.html?suits=clubs+hearts&ranks=2+6+10&limit=4` should draw any 4 of the following cards: 
+ 
  - 2 of clubs
  - 2 of hearts
  - 6 of clubs
