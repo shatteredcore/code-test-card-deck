@@ -64,7 +64,7 @@ Use the following URL parameters to determine which cards should be drawn.  You 
 #### BONUS: sorted
 
 If you're still thirsty for more:
-'sorted' should draw cards grouped by suit and ordered by rank.  Ordering may be either asc or desc.
+'sorted' should sort the drawn cards: grouped by suit and ordered by rank.  Ordering may be either asc or desc.
   
 
 ## Intructions
