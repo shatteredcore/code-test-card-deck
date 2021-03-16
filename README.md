@@ -69,7 +69,7 @@ If you're still thirsty for more:
 
 ## Instructions
 
-- Fork this repo to a private repo your own GitHub account.
+- Fork this repo to a private repo in your own GitHub account.
 - Complete the challenge.
 - Push your solution to your private repo.
 - Share your repo with @thisanimus and @robmomary.
