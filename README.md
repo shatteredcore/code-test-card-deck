@@ -67,7 +67,7 @@ If you're still thirsty for more:
 'sorted' should sort the drawn cards: grouped by suit and ordered by rank.  Ordering may be either asc or desc.
   
 
-## Intructions
+## Instructions
 
 - Fork this repo to a private repo your own GitHub account.
 - Complete the challenge.
