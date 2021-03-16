@@ -20,7 +20,7 @@ Because we are not always working from a blank slate, it's important for develop
   
 
 ### URL Parameters
-Use the following URL parameters to determine which cards should be drawn.  You should be able to filter by more than one parameter at a time, and non-specified parameters eg: (?foo=bar) should not break your code.
+Use the following URL parameters to determine which cards should be drawn.  You should be able to filter by more than one parameter at a time, and non-specified parameters eg: (?foo=bar) should not draw any cards.
 
 #### cards
 
