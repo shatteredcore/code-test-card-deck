@@ -47,7 +47,7 @@ Because we are not always working from a blank slate, it's important for develop
 
 #### limit
 
-'limit' should limit the number of cards drawed eg:
+'limit' should limit the number of cards drawn eg:
 
  `index.html?suits=spades&limit=4` should draw any 4 spades.
 
