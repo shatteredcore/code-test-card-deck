@@ -3,6 +3,49 @@
 	--card-width: 200px;
 }
 
+.button-container{
+	position: absolute;
+    margin-top: -700px;
+}
+
+.sort-button{
+	border-radius:5px;
+}
+
+.sort-button:hover{
+	filter:brightness(0.75);
+}
+
+.sort-button.suit{
+	font-size:60px;
+}
+.sort-button.rank{
+	font-size:40px;
+}
+
+.sort-button.clear{
+	font-size:24px;
+}
+
+.sort-button[suit="hearts"], .sort-button[suit="diamonds"]{
+	color:red;
+}
+
+.sort-button.active{
+	background-color:yellow;
+}
+
+.rank-buttons{
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+#limit{
+	color:white;
+	height: 25px;
+    float: right;
+}
+
 
 .table {
 	height: 100vh;

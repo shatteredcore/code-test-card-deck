@@ -176,6 +176,90 @@ class CardDeck {
 
 // Create a new card deck.
 const deck = new CardDeck(".deck", ".hand");
-
+deck.sort();
 // Take a look at the deck object and its methods.
 console.log(deck);
+
+var url = new URLSearchParams(window.location.search);
+var cards = url.get("cards");
+var suits = url.get("suits");
+var ranks = url.get("ranks");
+var limit = url.get("limit");
+
+if(cards != null){
+	var cardsArr = cards.split(" ");
+	deck.filter('id',cardsArr);
+}
+
+if(suits != null){
+	var suitsArr = suits.split(" ");
+	console.log(suitsArr);
+	for(let s in suitsArr){
+		document.querySelector(".suit[suit="+suitsArr[s]+"]").classList.add("active");
+	}
+	deck.filter('suit', suitsArr);
+}
+
+if (ranks != null){
+	var ranksArr = ranks.split(" ").map(rank => parseInt(rank));
+	console.log(ranksArr);
+	for(let r in ranksArr){
+		document.querySelector(".rank[rank='"+ranksArr[r]+"']").classList.add("active");
+	}
+	deck.filter('rank', ranksArr);
+}
+
+if(limit != null){
+	document.querySelector("#limit input").value = limit;
+	deck.limit(parseInt(limit));
+}
+
+if(cards!=null||suits!=null||ranks!=null){
+	deck.drawFiltered();
+}
+
+function setParamsAndRefresh(){
+	var suits = "";
+	var ranks = "";
+	document.querySelectorAll(".sort-button.active").forEach((sortButton)=>{
+		var isSuit = sortButton.classList.contains("suit");
+		if(isSuit){
+			suits += suits.length==0 ? "":" ";
+			suits += sortButton.getAttribute("suit");
+		}else{
+			ranks += ranks.length==0 ? "":" ";
+			ranks += sortButton.getAttribute("rank");
+		}
+	});
+	
+	var newURL = new URLSearchParams();
+	if(suits != ""){newURL.set("suits",suits);}
+	if(ranks != ""){newURL.set("ranks",ranks);}
+	if(limit!=null){newURL.set("limit",limit);}
+	console.log(newURL.toString());
+	window.location.href = window.location.origin+window.location.pathname+"?"+newURL.toString();
+}
+
+document.querySelectorAll(".sort-button").forEach((sortButton)=>{
+	sortButton.onclick = function(){
+		if(sortButton.classList.contains("active")){
+			sortButton.classList.remove("active");
+		}else{
+			sortButton.classList.add("active");
+		}
+		setParamsAndRefresh();
+	}
+});
+
+document.querySelector(".sort-button.clear").onclick = () => {
+	document.querySelectorAll(".sort-button.active").forEach((sortButton)=>{
+		sortButton.classList.remove("active");
+	});
+	limit = null;
+	setParamsAndRefresh();
+}
+
+document.querySelector("#limit input").oninput = (e) => {
+	limit = e.target.value==0?null:e.target.value;
+	setParamsAndRefresh();
+}
